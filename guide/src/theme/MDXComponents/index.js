@@ -11,21 +11,16 @@ import Admonition from '@theme/Admonition';
 
 import {
 	DiscordButton,
-	DiscordButtons,
-	DiscordDefaultOptions,
+	DiscordCommand,
 	DiscordEmbed,
 	DiscordEmbedField,
 	DiscordEmbedFields,
-	DiscordInteraction,
-	DiscordMarkdown,
 	DiscordMention,
 	DiscordMessage,
 	DiscordMessages,
-	DiscordOptionsContext,
 	DiscordReaction,
 	DiscordReactions,
-} from '@discord-message-components/react';
-import '@discord-message-components/react/styles';
+} from '@skyra/discord-components-react';
 import isDarkTheme from '../../hooks/isDarkTheme';
 
 import Tabs from '@theme/Tabs';
@@ -35,8 +30,7 @@ import DocsLink from '../../components/DocsLink';
 import ResultingCode from '../../components/ResultingCode';
 import WorkInProgress from '../../components/WorkInProgress';
 
-const discordOptions = {
-	...DiscordDefaultOptions,
+window.$discordMessage = {
 	profiles: {
 		user: {
 			author: 'AbhigyanTrips',
@@ -82,11 +76,9 @@ const MDXComponents = {
 	},
 	DiscordMessages: (props) => {
 		return (
-			<DiscordOptionsContext.Provider value={discordOptions}>
-				<DiscordMessages {...props} lightTheme={!isDarkTheme()}>
-					{props.children}
-				</DiscordMessages>
-			</DiscordOptionsContext.Provider>
+			<DiscordMessages {...props} lightTheme={!isDarkTheme()}>
+				{props.children}
+			</DiscordMessages>
 		);
 	},
 	DiscordMessage: (props) => {
@@ -108,15 +100,6 @@ const MDXComponents = {
 	DiscordEmbedField: (props) => {
 		return <DiscordEmbedField {...props}>{props.children}</DiscordEmbedField>;
 	},
-	DiscordInteraction: (props) => {
-		return <DiscordInteraction {...props}>{props.children}</DiscordInteraction>;
-	},
-	DiscordMarkdown: (props) => {
-		return <DiscordMarkdown {...props}>{props.children}</DiscordMarkdown>;
-	},
-	DiscordButtons: (props) => {
-		return <DiscordButtons {...props}>{props.children}</DiscordButtons>;
-	},
 	DiscordButton: (props) => {
 		return <DiscordButton {...props}>{props.children}</DiscordButton>;
 	},
@@ -125,6 +108,9 @@ const MDXComponents = {
 	},
 	DiscordReaction: (props) => {
 		return <DiscordReaction {...props}>{props.children}</DiscordReaction>;
+	},
+	DiscordCommand: (props) => {
+		return <DiscordCommand {...props}>{props.children}</DiscordCommand>;
 	},
 };
 export default MDXComponents;

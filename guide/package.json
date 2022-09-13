@@ -15,9 +15,6 @@
   "bugs": {
     "url": "https://github.com/DisnakeDev/guide/issues"
   },
-  "dependencies": {
-    "@discord-message-components/react": "^0.2.1"
-  },
   "browserslist": {
     "production": [
       ">0.5%",
@@ -34,6 +31,7 @@
     "@docusaurus/core": "^2.0.1",
     "@docusaurus/preset-classic": "^2.0.1",
     "@mdx-js/react": "^1.6.22",
+    "@skyra/discord-components-react": "^3.4.1",
     "clsx": "^1.1.1",
     "docusaurus-plugin-sass": "^0.2.2",
     "eslint": "^8.6.0",

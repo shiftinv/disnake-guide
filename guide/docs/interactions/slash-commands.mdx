@@ -30,11 +30,7 @@ async def ping(inter: disnake.ApplicationCommandInteraction):
 <br />
 <DiscordMessages>
 	<DiscordMessage profile="bot">
-		<div slot="interactions">
-			<DiscordInteraction profile="user" command="true">
-				ping
-			</DiscordInteraction>
-		</div>
+		<DiscordCommand profile="user" command="/ping"></DiscordCommand>
 		Pong!
 	</DiscordMessage>
 </DiscordMessages>
